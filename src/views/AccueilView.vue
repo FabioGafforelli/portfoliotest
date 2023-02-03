@@ -22,11 +22,12 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth
 // Import emetteur de main.js
 import { emitter } from '../main'
 import CompetenceDev from "../components/icones/competenceDev.vue"
+import Nuage from "../components/Nuage.vue"
 
 
 export default {
     name:"App",
-    components: { footer1, Competence, RouterLink, CompetenceDev },
+    components: { footer1, Competence, RouterLink, CompetenceDev, Nuage },
   data() {
     return {
         nom:null, // Pour la création d'un nouveau pays
@@ -270,6 +271,8 @@ async createLogicielDev(){
 <template>
   <div class="cursor-crosshair">
     <h1>Présentation de moi</h1>
+    <Nuage />
+
     <div class="cursor-[http://www.rw-designer.com/cursor-extern.php?id=179073,_pointer]">
   <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
     <span class="visually-hidden">A Venir...</span>
@@ -312,7 +315,6 @@ async createLogicielDev(){
         </div>
     </div>
 </div>
-
 </div>
 </div>
 </div>

@@ -3,7 +3,7 @@
     <Camera :position="{ x: 10, y: 0, z: 0 }" />
     <Scene>
       <AmbientLight></AmbientLight>
-      <GltfModel src="/public/models/cubeblender.glb" />
+      <GltfModel src="/public/models/PolyEarth.glb" />
     </Scene>
   </Renderer>
 </template>
