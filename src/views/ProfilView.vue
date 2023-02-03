@@ -1,4 +1,4 @@
-<script>
+<script  setup>
 import Nuage from '../components/Nuage.vue';
 
 

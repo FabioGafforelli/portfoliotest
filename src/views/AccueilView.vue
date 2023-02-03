@@ -22,12 +22,11 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth
 // Import emetteur de main.js
 import { emitter } from '../main'
 import CompetenceDev from "../components/icones/competenceDev.vue"
-import Nuage from "../components/Nuage.vue"
 
 
 export default {
     name:"App",
-    components: { footer1, Competence, RouterLink, CompetenceDev, Nuage },
+    components: { footer1, Competence, RouterLink, CompetenceDev },
   data() {
     return {
         nom:null, // Pour la création d'un nouveau pays
@@ -275,7 +274,6 @@ async createLogicielDev(){
   <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
     <span class="visually-hidden">A Venir...</span>
   </div>
-  <Nuage />
 </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla. Dictum fusce ut placerat orci nulla pellentesque. Lorem ipsum dolor sit amet consectetur adipiscing. In ante metus dictum at tempor commodo. Quisque egestas diam in arcu cursus euismod quis viverra nibh. In eu mi bibendum neque egestas congue quisque egestas. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Amet porttitor eget dolor morbi non. Quis vel eros donec ac odio. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin.</p>
     <br>

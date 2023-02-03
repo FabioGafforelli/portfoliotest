@@ -36,7 +36,7 @@ function init (geometry) {
 }
 
 const loader = new OBJLoader();
-loader.load("/public/models/A_10.obj", (obj) => init(obj.children[0].geometry) );
+loader.load("/models/test.obj", (obj) => init(obj.children[0].geometry) );
 
 function handleWindowResize () {
   camera.aspect = window.innerWidth / window.innerHeight;
