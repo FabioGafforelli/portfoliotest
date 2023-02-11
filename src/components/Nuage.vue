@@ -1,9 +1,9 @@
 <template>
-  <Renderer ref="renderer" antialias :orbit-ctrl="{ enableDamping: true }" resize>
+  <Renderer class="planet" ref="renderer" antialias :orbit-ctrl="{ enableDamping: true }" resize>
     <Camera :position="{ x: 10, y: 0, z: 0 }" />
-    <Scene>
+    <Scene background="#4DBA87">
       <AmbientLight></AmbientLight>
-      <GltfModel src="public/models/PolyEarth.glb" />
+      <GltfModel src="models/planet.glb" />
     </Scene>
   </Renderer>
 </template>
@@ -27,3 +27,7 @@ export default {
   },
 };
 </script>
+
+<style>
+
+</style>

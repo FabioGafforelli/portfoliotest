@@ -24,7 +24,19 @@ import { emitter } from '../main'
 import CompetenceDev from "../components/icones/competenceDev.vue"
 import Nuage from "../components/Nuage.vue"
 
+const text = new SplitType("#text");
+const characters = document.querySelectorAll(".char");
 
+characters.forEach((char) => {
+char.classList.add("translate-y-full");
+});
+
+gsap.to(".char", {
+y: 0,
+stagger: 0.05,
+delay: 0.02,
+duration: 0.5,
+});
 export default {
     name:"App",
     components: { footer1, Competence, RouterLink, CompetenceDev, Nuage },
@@ -271,14 +283,13 @@ async createLogicielDev(){
 <template>
   <div class="cursor-crosshair">
     <h1>Présentation de moi</h1>
-    <Nuage />
-
+<Nuage />    
     <div class="cursor-[http://www.rw-designer.com/cursor-extern.php?id=179073,_pointer]">
   <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
     <span class="visually-hidden">A Venir...</span>
   </div>
 </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla. Dictum fusce ut placerat orci nulla pellentesque. Lorem ipsum dolor sit amet consectetur adipiscing. In ante metus dictum at tempor commodo. Quisque egestas diam in arcu cursus euismod quis viverra nibh. In eu mi bibendum neque egestas congue quisque egestas. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Amet porttitor eget dolor morbi non. Quis vel eros donec ac odio. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin.</p>
+    <p id="text" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla. Dictum fusce ut placerat orci nulla pellentesque. Lorem ipsum dolor sit amet consectetur adipiscing. In ante metus dictum at tempor commodo. Quisque egestas diam in arcu cursus euismod quis viverra nibh. In eu mi bibendum neque egestas congue quisque egestas. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Amet porttitor eget dolor morbi non. Quis vel eros donec ac odio. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin.</p>
     <br>
     <h2>Au sein de mon cursus, j'ai développé des compétences sur différents logiciels utilisés dans différents secteurs tels que :</h2>
     <h2 class="font-museomoderno font-bold text-center text-2xl text-blue-700">Design</h2>
