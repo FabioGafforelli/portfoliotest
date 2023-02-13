@@ -5,6 +5,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        animate:{
+        '0%,10%,100%': {
+          width:'0%'
+        },
+        '70%,80%,90%': {
+          width:'100%'
+        },
+      }
+      },
       "colors": {
         "marron": "#B45309",
         "jaune": "#FBBF24",
@@ -44,6 +54,9 @@ module.exports = {
         "11xl": "2.1875rem"
       }
 
+    },
+    animation: {
+      animate:'animate 6s linear infinite'
     }
   },
   plugins: [],

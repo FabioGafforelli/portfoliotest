@@ -282,7 +282,15 @@ async createLogicielDev(){
 
 <template>
   <div class="cursor-crosshair">
-    <h1>Présentation de moi</h1>
+    <div class="container">
+      <div class="animation">
+        <span class="first">Fabio</span>
+        <span class="slide">
+          <span class="second">Gafforelli</span>
+        </span>
+      </div>
+    </div>
+    <h1 class="welcome">Portfolio</h1>
 <Nuage />    
     <div class="cursor-[http://www.rw-designer.com/cursor-extern.php?id=179073,_pointer]">
   <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
@@ -331,3 +339,13 @@ async createLogicielDev(){
 </div>
 <footer1 />
 </template>
+
+<style>
+
+  .welcome {
+    @apply relative text-slate-300 text-[12vw] uppercase font-[800]
+  }
+  .welcome::before{
+    @apply content-['Portfolio'] absolute text-green-400 border-green-400 top-0 left-0 w-0 h-[100%] overflow-hidden animate-animate
+  }
+</style>
