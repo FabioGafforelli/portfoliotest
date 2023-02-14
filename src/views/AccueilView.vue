@@ -291,7 +291,9 @@ async createLogicielDev(){
       </div>
     </div>
     <h1 class="welcome">Portfolio</h1>
-<Nuage />    
+    <div class="w2/3 h-44 align-middle">
+<Nuage />
+</div>
     <div class="cursor-[http://www.rw-designer.com/cursor-extern.php?id=179073,_pointer]">
   <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
     <span class="visually-hidden">A Venir...</span>

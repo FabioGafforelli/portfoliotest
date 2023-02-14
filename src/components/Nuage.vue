@@ -1,9 +1,9 @@
 <template>
   <Renderer class="planet" ref="renderer" antialias :orbit-ctrl="{ enableDamping: true }" resize>
-    <Camera :position="{ x: 10, y: 0, z: 0 }" />
-    <Scene background="#000">
+    <Camera :position="{ x: 20, y: 0, z: 0 }" />
+    <Scene background="#fff">
       <AmbientLight></AmbientLight>
-      <GltfModel src="models/planet.glb" />
+      <GltfModel src="models/love.glb" />
     </Scene>
   </Renderer>
 </template>
