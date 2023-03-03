@@ -23,6 +23,7 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth
 import { emitter } from '../main'
 import CompetenceDev from "../components/icones/competenceDev.vue"
 import Nuage from "../components/Nuage.vue"
+import animateglb from "../components/animateglb.vue"
 
 const text = new SplitType("#text");
 const characters = document.querySelectorAll(".char");
@@ -39,7 +40,7 @@ duration: 0.5,
 });
 export default {
     name:"App",
-    components: { footer1, Competence, RouterLink, CompetenceDev, Nuage },
+    components: { footer1, Competence, RouterLink, CompetenceDev, Nuage, animateglb },
   data() {
     return {
         nom:null, // Pour la création d'un nouveau pays
@@ -284,13 +285,17 @@ async createLogicielDev(){
   <div class="cursor-crosshair">
     <div class="container">
       <div class="animation">
-        <span class="first">Fabio</span>
+        <span class="first">Test</span>
         <span class="slide">
-          <span class="second">Gafforelli</span>
+          <span class="second">LOREMIPSUM</span>
         </span>
       </div>
     </div>
     <h1 class="welcome">Portfolio</h1>
+    <div class="container">
+      <span class="txt t1">- WEBDESIGNER - 3D ARTIST - WEBDESIGNER - DEVELOPPEUR</span>
+      <span class="txt t2">- WEBDESIGNER - 3D ARTIST - WEBDESIGNER - DEVELOPPEUR</span>
+    </div>
     <div class="w2/3 h-44 align-middle">
 <Nuage />
 </div>
@@ -339,11 +344,54 @@ async createLogicielDev(){
 </div>
 </div>
 </div>
+<div class="grid grid-cols-3 gap-4">
+
+  <div class="col-span-2 text-9xl uppercase"> Rognon</div>
+  <div class="col-span-2 text-9xl uppercase"> Baptiste</div>
+  <div class="...">
+    <div>ÉTUDIANT EN LICENCE BUT
+MMI. JE SUIS SPÉCIALISÉ DANS  
+LE DIGITAL DESIGN ET LE 
+RÉFERENCEMENT. </div>
+    <div>ÉTUDIANT EN LICENCE BUT
+MMI. JE SUIS SPÉCIALISÉ DANS  
+LE DIGITAL DESIGN ET LE 
+RÉFERENCEMENT. </div>
+    <div>ÉTUDIANT EN LICENCE BUT
+MMI. JE SUIS SPÉCIALISÉ DANS  
+LE DIGITAL DESIGN ET LE 
+RÉFERENCEMENT. </div>
+  </div>
+
+</div>
 <footer1 />
 </template>
 
 <style>
+.container {
+  overflow: hidden;
+  display: flex;
+  /* Fonctionne avec toutes les tailles */
 
+  transform: translateY(-20%);
+  /* pour rotate on enlève le translate et on rajoute le rotate */
+  /* transform:  rotate(90deg); */
+}
+.txt {
+  white-space: nowrap;
+  font-size: 50px;
+  animation: scrollTxt 7s linear infinite;
+}
+
+
+@keyframes scrollTxt {
+  0%{
+    transform: translate(-60%, 0);
+  }
+  100% {
+    transform: translate(0%, 0);
+  }
+}
   .welcome {
     @apply relative text-slate-300 text-[12vw] uppercase font-[800]
   }

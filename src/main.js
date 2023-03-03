@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import './index.css'
 
-
 import mitt from 'mitt';
   // Import the functions you need from the SDKs you need
   
@@ -41,7 +40,7 @@ import mitt from 'mitt';
   app.config.globalProperties.emitter = emitter;
   
   
-  
+ 
   app.use(router)
   
   app.mount('#app')
