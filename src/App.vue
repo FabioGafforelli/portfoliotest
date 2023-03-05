@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import router from "./router"
+import router from "./router/index.js"
 import Logo from '../src/components/icones/Logo.vue'
 import Navigation from '../src/components/icones/Navbar.vue'
 import { MenuIcon, } from "@heroicons/vue/solid";
