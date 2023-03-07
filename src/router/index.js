@@ -1,4 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js'
+import {
+  getFirestore,
+  collection,
+  onSnapshot,
+  query,
+  where
+} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 import AccueilView from '../views/AccueilView.vue'
 import ContactView from '../views/ContactView.vue';
 import MentionslegalesView from '../views/MentionslegalesView.vue';
