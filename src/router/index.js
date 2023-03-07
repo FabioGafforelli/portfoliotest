@@ -33,11 +33,11 @@ const router = createRouter({
     { path: '/:pathMatch(.*)*', name: 'View404', component: View404 },
 
 
-    { path: '/projets', name: 'ListeProjets', component: ListeProjets },
+    { path: '/projets', name: 'ListeProjets', component: ListeProjets, },
     { path: '/projet/:id', name: 'idprojet', component: idprojet },
-    { path: '/createProjet', name: 'CreateProjets', component: CreateProjets  },
-    { path: '/updateProjets/:id', name: 'UpdateProjets', component: UpdateProjets },
-    { path: '/deleteProjets/:id', name: 'DeleteProjets', component: DeleteProjets },
+    { path: '/createProjet', name: 'CreateProjets', component: CreateProjets, beforeEnter: guard  },
+    { path: '/updateProjets/:id', name: 'UpdateProjets', component: UpdateProjets, beforeEnter: guard },
+    { path: '/deleteProjets/:id', name: 'DeleteProjets', component: DeleteProjets, beforeEnter: guard },
 
     { path: '/createDesign', name: 'CreateDesign', component: CreateDesign  },
     { path: '/updateDesign/:id', name: 'UpdateLogicielDesign', component: UpdateLogicielDesign },
@@ -50,5 +50,29 @@ const router = createRouter({
   ]
 })
 
-
+function guard(to, from, next) {
+  getAuth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log('router OK => user ', user);
+      const firestore = getFirestore();
+      const dbUsers = collection(firestore, "users");
+      const q = query(dbUsers, where("uid", "==", user.uid));
+      onSnapshot(q, (snapshot) => {
+        let userInfo = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        let isAdmin = userInfo[0].admin;
+        if (isAdmin) {
+          next(to.params.name);
+          return;
+        } else {
+          alert("Vous n'avez pas l'autorisation pour cette fonction");
+          next({ name: "HomeView" });
+          return;
+        }
+      })
+    } else {
+      console.log('router NOK => user ', user);
+      next({ name: "HomeView" });
+    }
+  });
+}
 export default router
