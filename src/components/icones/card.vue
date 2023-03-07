@@ -45,7 +45,6 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth
 
 // Import emetteur de main.js
 import { emitter } from '/src/main'
-import * as THREE from 'three'
 
 
 

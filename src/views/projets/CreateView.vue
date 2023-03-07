@@ -4,16 +4,23 @@
   <div class="relative mt-12 mb-20 flex flex-col gap-20 px-5">
     <section class="pb-6 mx-2 md:max-w-[70%] md:m-auto lg:max-w-[50%] lg:pb-14">
     <form enctype="multipart/form-data" @submit.prevent="CreateProjet">
-      <div class="grid grid-cols-1 gap-4 lg:flex lg:w-[100%] lg:justify-center">
-        <div class="m-auto">
+        <div class="grid grid-cols-1 gap-4 lg:flex lg:w-[100%] lg:justify-center">
+          <div class="m-auto">
           <img class="" :src="imageData" />
         </div>
         <div class="grid grid-cols-1 gap-14">
           <div class="flex h-10 overflow-hidden rounded-2xl text-black">
-            <div class="flex items-center justify-center border-[1px] bg-blue-700 px-5 text-white">Nom</div>
+            <div class="flex items-center justify-center  bg-blue-700 px-5 text-white">Nom</div>
             <input class="font-museomoderno w-full border-2 bg-white p-5" type="text" placeholder="Nom du jeu" v-model="Projet.nom" required />
           </div>
-
+          <div class="flex h-auto overflow-hidden rounded-2xl text-black">
+                        <div class="flex items-center justify-center border-[1px] bg-blue-700 px-5 text-white">Domaine</div>
+                        <select class="w-full bg-white" id="domaine" v-model="Projet.domaine">
+                        <option selected disabled>Sélectionner un domaine</option>
+                            <option v-for="domaine in listeDomaine" :key="domaine">{{domaine}}</option>
+                        </select>
+                        
+                    </div>
           <div class="flex h-12 overflow-hidden rounded-2xl text-black">
             <p class="font-museomoderno border-[1px] bg-blue-700 px-6 py-3 text-white">Description</p>
             <input
@@ -91,6 +98,7 @@ export default {
   data() {
     return {
       imageData: null, // Image prévisualisée
+      listeDomaine:["Design", "Teaching", "Communication", "Developpement"],     
       ListeProjet: [],
       Projet: {
         photo: null,
